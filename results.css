@@ -1,0 +1,507 @@
+/* =========================================================
+   BreastCancerQML - Results Dashboard
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.results-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.results-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.results-header p {
+    margin-top: 6px;
+    color: #697386;
+    font-size: 15px;
+}
+
+/* =========================================================
+   HERO / HYBRID PREDICTION
+   ========================================================= */
+
+.result-hero {
+    background: linear-gradient(135deg, #ffffff, #f8fbff);
+    border: 1px solid #e3e8f0;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(25, 45, 80, 0.07);
+}
+
+.result-hero h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #667085;
+    margin-bottom: 12px;
+}
+
+#hybridPrediction {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+#hybridConfidence {
+    font-size: 20px;
+    font-weight: 600;
+    color: #475467;
+}
+
+/* =========================================================
+   CONFIDENCE BAR
+   ========================================================= */
+
+.confidence-bar {
+    width: 100%;
+    height: 10px;
+    background: #e8edf4;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+#hybridConfidenceBar {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    transition: width 0.6s ease;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+#resultMessage {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: #f4f7fb;
+    border-radius: 12px;
+    color: #475467;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* =========================================================
+   DASHBOARD GRID
+   ========================================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 24px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border: 1px solid #e3e8f0;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(25, 45, 80, 0.05);
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.card-eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #7b8798;
+    margin-bottom: 5px;
+}
+
+.card-heading h2 {
+    font-size: 21px;
+    color: #172033;
+}
+
+/* =========================================================
+   MODEL CARDS
+   ========================================================= */
+
+.model-card {
+    min-height: 230px;
+}
+
+.model-prediction {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.model-confidence {
+    color: #667085;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.probability-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.probability-label {
+    color: #667085;
+}
+
+.probability-value {
+    font-weight: 700;
+}
+
+/* =========================================================
+   PROBABILITY BARS
+   ========================================================= */
+
+.probability-bar {
+    width: 100%;
+    height: 8px;
+    background: #edf1f6;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.probability-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    transition: width 0.6s ease;
+}
+
+/* =========================================================
+   3-BAR MODEL CONFIDENCE CHART
+   ========================================================= */
+
+.bar-chart {
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 25px 20px 0;
+    border-bottom: 1px solid #dfe4ec;
+}
+
+.chart-column {
+    height: 100%;
+    flex: 1;
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.chart-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.chart-bar {
+    width: 70px;
+    min-height: 8px;
+    border-radius: 10px 10px 0 0;
+    background: #315efb;
+    transition: height 0.7s ease;
+}
+
+.chart-label {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475467;
+    margin-top: 12px;
+}
+
+/* =========================================================
+   CHART LEGEND
+   ========================================================= */
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    color: #667085;
+    font-size: 13px;
+}
+
+.chart-legend span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-legend i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #315efb;
+}
+
+/* =========================================================
+   HYBRID PROBABILITY
+   ========================================================= */
+
+.probability-container {
+    margin-top: 10px;
+}
+
+.probability-item {
+    margin-bottom: 22px;
+}
+
+.probability-item:last-child {
+    margin-bottom: 0;
+}
+
+.probability-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.probability-header span:first-child {
+    font-weight: 600;
+    color: #344054;
+}
+
+.probability-header span:last-child {
+    font-weight: 700;
+    color: #172033;
+}
+
+/* =========================================================
+   FEATURE IMPORTANCE
+   ========================================================= */
+
+#featureImportance {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 190px 1fr 55px;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-name {
+    font-size: 13px;
+    color: #475467;
+}
+
+.feature-bar-container {
+    height: 8px;
+    background: #edf1f6;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.feature-bar {
+    height: 100%;
+    border-radius: 20px;
+    background: #315efb;
+}
+
+.feature-value {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+    color: #344054;
+}
+
+/* =========================================================
+   INPUT FEATURES
+   ========================================================= */
+
+#featureValues {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.feature-value-card {
+    background: #f8fafc;
+    border: 1px solid #e7ebf1;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.feature-value-card .label {
+    display: block;
+    font-size: 11px;
+    color: #7b8798;
+    margin-bottom: 5px;
+}
+
+.feature-value-card .value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #172033;
+}
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.disclaimer {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border: 1px solid #e4e8ee;
+    border-radius: 14px;
+    background: #fafbfc;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   BUTTONS / ACTIONS
+   ========================================================= */
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.actions button,
+.actions a {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: #315efb;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.92;
+}
+
+.secondary-btn {
+    background: #eef2f7;
+    color: #344054;
+}
+
+.secondary-btn:hover {
+    background: #e3e8ef;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .results-page {
+        padding: 20px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-header h1 {
+        font-size: 26px;
+    }
+
+    #hybridPrediction {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .results-page {
+        padding: 14px;
+    }
+
+    .result-hero,
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    .bar-chart {
+        height: 250px;
+        gap: 12px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .chart-bar {
+        width: 48px;
+    }
+
+    .chart-label {
+        font-size: 11px;
+    }
+
+    #featureValues {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-row {
+        grid-template-columns: 120px 1fr 45px;
+    }
+}

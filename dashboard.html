@@ -1,0 +1,731 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="HealthQML Dashboard - Hybrid Quantum Machine Learning">
+
+    <title>Dashboard | HealthQML</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-icon">
+                    Q
+                </div>
+
+                <div class="logo-text">
+                    HealthQML
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html"
+               class="nav-item active">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="assessment.html"
+               class="nav-item">
+
+                <span class="nav-icon">📝</span>
+
+                <span>Assessment</span>
+
+            </a>
+
+
+            <a href="#results"
+               class="nav-item">
+
+                <span class="nav-icon">📊</span>
+
+                <span>Results</span>
+
+            </a>
+
+
+            <a href="#history"
+               class="nav-item">
+
+                <span class="nav-icon">🗂️</span>
+
+                <span>History</span>
+
+            </a>
+
+
+            <a href="#reports"
+               class="nav-item">
+
+                <span class="nav-icon">📄</span>
+
+                <span>Reports</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html"
+               class="nav-item">
+
+                <span class="nav-icon">←</span>
+
+                <span>Home</span>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton">
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN AREA
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton">
+
+                ☰
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h2>
+                    Dashboard
+                </h2>
+
+                <p>
+                    HealthQML assessment platform
+                </p>
+
+            </div>
+
+
+            <div class="user-area">
+
+                <div class="user-avatar">
+                    U
+                </div>
+
+                <div class="user-info">
+
+                    <strong id="userEmail">
+                        User
+                    </strong>
+
+                    <span>
+                        Research User
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             DASHBOARD CONTENT
+        ========================================== -->
+
+        <div class="dashboard-container">
+
+
+            <!-- WELCOME -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <p class="small-label">
+                        HEALTHQML DASHBOARD
+                    </p>
+
+                    <h1>
+                        Welcome back! 👋
+                    </h1>
+
+                    <p>
+                        Explore your health-risk assessment
+                        using machine learning and hybrid
+                        quantum machine learning.
+                    </p>
+
+                </div>
+
+
+                <a href="assessment.html"
+                   class="primary-button">
+
+                    + Start New Assessment
+
+                </a>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 STAT CARDS
+            ====================================== -->
+
+            <section class="stats-grid">
+
+
+                <!-- Assessments -->
+
+                <div class="dashboard-card stat-card">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <span class="stat-title">
+                            Assessments
+                        </span>
+
+                        <strong class="stat-value"
+                                id="assessmentCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ML -->
+
+                <div class="dashboard-card stat-card">
+
+                    <div class="stat-icon">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <span class="stat-title">
+                            Classical ML
+                        </span>
+
+                        <strong class="stat-value">
+                            Ready
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quantum -->
+
+                <div class="dashboard-card stat-card">
+
+                    <div class="stat-icon">
+                        ⚛️
+                    </div>
+
+                    <div>
+
+                        <span class="stat-title">
+                            Quantum ML
+                        </span>
+
+                        <strong class="stat-value">
+                            Ready
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Risk -->
+
+                <div class="dashboard-card stat-card">
+
+                    <div class="stat-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+
+                        <span class="stat-title">
+                            Latest Risk
+                        </span>
+
+                        <strong class="stat-value"
+                                id="latestRisk">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 QUICK ACTIONS
+            ====================================== -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="small-label">
+                            QUICK ACTIONS
+                        </p>
+
+                        <h2>
+                            What would you like to do?
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+
+                    <!-- Assessment -->
+
+                    <a href="assessment.html"
+                       class="quick-card">
+
+                        <div class="quick-icon">
+                            🩺
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                New Assessment
+                            </h3>
+
+                            <p>
+                                Enter health and lifestyle
+                                information for analysis.
+                            </p>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- Results -->
+
+                    <a href="#results"
+                       class="quick-card">
+
+                        <div class="quick-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                View Results
+                            </h3>
+
+                            <p>
+                                Explore your latest assessment
+                                results and risk information.
+                            </p>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- History -->
+
+                    <a href="#history"
+                       class="quick-card">
+
+                        <div class="quick-icon">
+                            🗂️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Assessment History
+                            </h3>
+
+                            <p>
+                                Review your previous assessments.
+                            </p>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 MODEL INFORMATION
+            ====================================== -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="small-label">
+                            TECHNOLOGY
+                        </p>
+
+                        <h2>
+                            Analysis Models
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-grid">
+
+
+                    <!-- Classical -->
+
+                    <div class="model-card">
+
+                        <div class="model-header">
+
+                            <div class="model-icon">
+                                🤖
+                            </div>
+
+                            <span class="ready-badge">
+                                Ready
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Classical Machine Learning
+                        </h3>
+
+                        <p>
+                            Conventional classification models
+                            will analyze the selected health
+                            features.
+                        </p>
+
+                        <div class="model-tags">
+
+                            <span>
+                                Classification
+                            </span>
+
+                            <span>
+                                Feature Analysis
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Quantum -->
+
+                    <div class="model-card quantum-card">
+
+                        <div class="model-header">
+
+                            <div class="model-icon">
+                                ⚛️
+                            </div>
+
+                            <span class="ready-badge">
+                                Research
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Hybrid Quantum ML
+                        </h3>
+
+                        <p>
+                            A hybrid quantum-classical workflow
+                            will be explored as an additional
+                            research model.
+                        </p>
+
+                        <div class="model-tags">
+
+                            <span>
+                                Quantum Circuit
+                            </span>
+
+                            <span>
+                                Hybrid Model
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 RECENT ASSESSMENTS
+            ====================================== -->
+
+            <section class="dashboard-section"
+                     id="history">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="small-label">
+                            HISTORY
+                        </p>
+
+                        <h2>
+                            Recent Assessments
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="history-card"
+                     id="historyCard">
+
+
+                    <div class="empty-history">
+
+                        <div class="empty-icon">
+                            📋
+                        </div>
+
+                        <h3>
+                            No assessments yet
+                        </h3>
+
+                        <p>
+                            Start your first assessment to see
+                            your results here.
+                        </p>
+
+                        <a href="assessment.html"
+                           class="secondary-button">
+
+                            Start Assessment
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 RESULTS PLACEHOLDER
+            ====================================== -->
+
+            <section class="dashboard-section"
+                     id="results">
+
+                <div class="result-info-card">
+
+                    <div class="result-info-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <p class="small-label">
+                            RESULTS
+                        </p>
+
+                        <h2>
+                            Your analysis results will appear here
+                        </h2>
+
+                        <p>
+                            Complete an assessment to generate
+                            machine-learning results and visual
+                            analytics.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 REPORTS PLACEHOLDER
+            ====================================== -->
+
+            <section class="dashboard-section"
+                     id="reports">
+
+                <div class="result-info-card">
+
+                    <div class="result-info-icon">
+                        📄
+                    </div>
+
+                    <div>
+
+                        <p class="small-label">
+                            REPORTS
+                        </p>
+
+                        <h2>
+                            Assessment reports
+                        </h2>
+
+                        <p>
+                            A downloadable assessment summary
+                            will be available after completing
+                            the assessment workflow.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                HealthQML
+            </p>
+
+            <p>
+                Student Research Prototype · Not a medical diagnosis
+            </p>
+
+        </footer>
+
+    </main>
+
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
+```

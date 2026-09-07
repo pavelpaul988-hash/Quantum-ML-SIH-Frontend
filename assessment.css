@@ -1,0 +1,945 @@
+
+/* =========================================
+   BREASTCANCERQML ASSESSMENT PAGE
+   SIH / HACKATHON PROJECT
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #eef2ff,
+            transparent 35%
+        ),
+        #f6f8fc;
+
+    color: #172033;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.assessment-header {
+
+    height: 76px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-bottom: 1px solid #e5e9f0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    text-decoration: none;
+}
+
+.logo-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172033,
+            #334155
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(23, 32, 51, 0.15);
+}
+
+.logo-text {
+
+    color: #172033;
+
+    font-size: 20px;
+
+    font-weight: 850;
+
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: #4f46e5;
+}
+
+.logo-subtitle {
+
+    color: #8992a3;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.back-button {
+
+    color: #4b5563;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.back-button:hover {
+
+    background: #f1f3f7;
+
+    color: #172033;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+.assessment-main {
+
+    padding: 52px 20px 70px;
+}
+
+.assessment-container {
+
+    width: 100%;
+
+    max-width: 940px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   INTRO
+   ========================================= */
+
+.page-intro {
+
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+.small-label {
+
+    display: inline-block;
+
+    color: #4f46e5;
+
+    background: #eef2ff;
+
+    border: 1px solid #e0e7ff;
+
+    border-radius: 30px;
+
+    padding: 7px 13px;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.page-intro h1 {
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.3px;
+
+    margin-bottom: 13px;
+}
+
+.page-intro p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #697386;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   NOTICE
+   ========================================= */
+
+.notice-box {
+
+    display: flex;
+
+    gap: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fafbff
+        );
+
+    border: 1px solid #dfe5ed;
+
+    border-radius: 15px;
+
+    padding: 19px 21px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(23, 32, 51, 0.035);
+}
+
+.notice-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    background: #eef2ff;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.notice-box strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.notice-box p {
+
+    color: #717b8c;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FORM CARD
+   ========================================= */
+
+.form-card {
+
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(23, 32, 51, 0.045);
+}
+
+
+/* =========================================
+   CARD HEADING
+   ========================================= */
+
+.card-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.card-number {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: #172033;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    letter-spacing: 0.5px;
+}
+
+.card-heading h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+
+    letter-spacing: -0.3px;
+}
+
+.card-heading p {
+
+    color: #8a93a3;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FORM GRID
+   ========================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px 20px;
+}
+
+
+/* =========================================
+   FORM GROUP
+   ========================================= */
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group label {
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+    color: #263247;
+}
+
+.form-group label span {
+
+    color: #e04444;
+}
+
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+.input-wrapper {
+
+    position: relative;
+}
+
+.form-group input {
+
+    width: 100%;
+
+    height: 47px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d9dfe8;
+
+    border-radius: 10px;
+
+    background: #fbfcfe;
+
+    color: #172033;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+.form-group input::placeholder {
+
+    color: #a4acb9;
+}
+
+.form-group input:hover {
+
+    background: white;
+
+    border-color: #c8ced9;
+}
+
+.form-group input:focus {
+
+    background: white;
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(79, 70, 229, 0.08);
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+
+    border-color: #b9c4d5;
+}
+
+.form-group small {
+
+    color: #8a93a3;
+
+    font-size: 9.5px;
+
+    line-height: 1.5;
+
+    margin-top: 6px;
+}
+
+.unit {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9aa3b2;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MODEL CARD
+   ========================================= */
+
+.model-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f9ff,
+            #ffffff
+        );
+
+    border: 1px solid #e1e5f4;
+
+    border-radius: 15px;
+
+    padding: 19px 22px;
+
+    margin-bottom: 18px;
+}
+
+.model-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #172033;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.model-title {
+
+    color: #172033;
+
+    font-size: 12px;
+
+    font-weight: 850;
+
+    margin-bottom: 8px;
+}
+
+.model-flow {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    color: #737d8d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.model-flow b {
+
+    color: #b1b7c2;
+
+    font-size: 12px;
+}
+
+.model-flow .hybrid {
+
+    color: #4f46e5;
+}
+
+
+/* =========================================
+   SUBMIT
+   ========================================= */
+
+.submit-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1f2937
+        );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 23px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    box-shadow:
+        0 14px 35px
+        rgba(17, 24, 39, 0.15);
+}
+
+.submit-content {
+
+    min-width: 0;
+}
+
+.submit-status {
+
+    color: #aeb8c9;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.status-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.12);
+}
+
+.submit-section strong {
+
+    display: block;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.submit-section p {
+
+    color: #aeb8c9;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.submit-button {
+
+    border: none;
+
+    min-height: 48px;
+
+    background: white;
+
+    color: #172033;
+
+    padding: 0 19px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.submit-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.15);
+}
+
+.submit-button:active {
+
+    transform: translateY(0);
+}
+
+.submit-button:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.button-arrow {
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.form-message {
+
+    min-height: 25px;
+
+    text-align: center;
+
+    margin-top: 14px;
+
+    font-size: 12px;
+
+    font-weight: 750;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .assessment-header {
+
+        padding: 0 20px;
+    }
+
+    .assessment-main {
+
+        padding: 35px 15px 50px;
+    }
+
+    .page-intro h1 {
+
+        font-size: 30px;
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .submit-section {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .submit-button {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .model-flow {
+
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .assessment-header {
+
+        height: 67px;
+    }
+
+    .logo-text {
+
+        font-size: 17px;
+    }
+
+    .logo-subtitle {
+
+        display: none;
+    }
+
+    .logo-icon {
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+    .back-button {
+
+        font-size: 11px;
+    }
+
+    .assessment-main {
+
+        padding: 28px 12px 40px;
+    }
+
+    .page-intro h1 {
+
+        font-size: 25px;
+    }
+
+    .page-intro p {
+
+        font-size: 12px;
+    }
+
+    .small-label {
+
+        font-size: 8px;
+    }
+
+    .form-card {
+
+        padding: 20px 16px;
+    }
+
+    .card-heading h2 {
+
+        font-size: 16px;
+    }
+
+    .card-heading p {
+
+        font-size: 10px;
+    }
+
+    .notice-box {
+
+        padding: 15px;
+    }
+
+    .model-card {
+
+        align-items: flex-start;
+    }
+
+    .model-flow {
+
+        gap: 5px;
+    }
+
+    .submit-section {
+
+        padding: 20px;
+    }
+
+    .submit-section strong {
+
+        font-size: 14px;
+    }
+}
+

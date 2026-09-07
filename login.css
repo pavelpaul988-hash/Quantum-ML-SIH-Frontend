@@ -1,0 +1,422 @@
+/* =========================================
+   HEALTHQML LOGIN PAGE
+   ========================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8ff,
+            #eef5ff
+        );
+
+    color: #172033;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+   ========================================= */
+
+.page-background {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 20px;
+
+}
+
+
+/* =========================================
+   LOGIN CARD
+   ========================================= */
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(23, 32, 51, 0.12);
+
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    margin-bottom: 35px;
+
+}
+
+
+.logo-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #172033;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.logo-name {
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    color: #172033;
+
+}
+
+
+/* =========================================
+   HEADING
+   ========================================= */
+
+.login-heading {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.login-heading h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.login-heading p {
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #d8dee9;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #172033;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(23, 32, 51, 0.08);
+
+}
+
+
+/* =========================================
+   FORM OPTIONS
+   ========================================= */
+
+.form-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+}
+
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.form-options a {
+
+    color: #172033;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.form-options a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
+.login-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #172033;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.login-button:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(23, 32, 51, 0.18);
+
+}
+
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.message {
+
+    min-height: 22px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   DEMO BOX
+   ========================================= */
+
+.demo-box {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background: #f5f7fa;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.demo-box strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================================
+   BACK HOME
+   ========================================= */
+
+.back-home {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+}
+
+
+.back-home a {
+
+    color: #172033;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+.back-home a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .page-background {
+
+        padding: 15px;
+
+    }
+
+
+    .login-card {
+
+        padding: 28px 22px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .login-heading h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .form-options {
+
+        font-size: 12px;
+
+    }
+
+}

@@ -1,0 +1,458 @@
+/* ============================================================
+   BREASTCANCERQML
+   Analysis Page
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(
+            circle at top,
+            #eef4ff 0%,
+            #f7f9fc 45%,
+            #eef2f7 100%
+        );
+    color: #172033;
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.analysis-header {
+    height: 76px;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #e3e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: #172033;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: #7a8495;
+    margin-top: 3px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 11px;
+    font-weight: 700;
+    color: #3d4758;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #28a96b;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 5px rgba(40, 169, 107, 0.12);
+}
+
+
+/* ============================================================
+   MAIN
+============================================================ */
+
+.analysis-main {
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 45px 20px;
+}
+
+.analysis-card {
+    width: 100%;
+    max-width: 760px;
+
+    background: white;
+
+    border: 1px solid #e3e8f0;
+    border-radius: 24px;
+
+    padding: 42px;
+
+    box-shadow:
+        0 20px 60px rgba(32, 48, 72, 0.10);
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   AI ORB
+============================================================ */
+
+.ai-orb {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+
+    background: #eef3ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: pulse 2s infinite;
+}
+
+.orb-core {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: #172033;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(70, 100, 180, 0.18);
+    }
+
+    70% {
+        box-shadow: 0 0 0 16px rgba(70, 100, 180, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(70, 100, 180, 0);
+    }
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.analysis-card h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.6;
+
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   PROGRESS
+============================================================ */
+
+.progress-section {
+    margin-top: 32px;
+    text-align: left;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    margin-bottom: 9px;
+}
+
+#progressPercent {
+    color: #465fb1;
+}
+
+.progress-track {
+    width: 100%;
+    height: 9px;
+
+    background: #edf0f5;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: #465fb1;
+
+    border-radius: 20px;
+
+    transition: width 0.35s ease;
+}
+
+
+/* ============================================================
+   STEPS
+============================================================ */
+
+.steps {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #edf0f4;
+
+    opacity: 0.42;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step.active {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.step.completed {
+    opacity: 0.85;
+}
+
+.step-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #eef1f6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    color: #7b8494;
+}
+
+.step.active .step-icon {
+    background: #172033;
+    color: white;
+}
+
+.step.completed .step-icon {
+    background: #e8f7ef;
+    color: #238357;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.step-content p {
+    font-size: 11px;
+    color: #858e9e;
+}
+
+.step-status {
+    font-size: 10px;
+    font-weight: 700;
+
+    color: #9aa2af;
+
+    text-transform: uppercase;
+}
+
+.step.active .step-status {
+    color: #465fb1;
+}
+
+.step.completed .step-status {
+    color: #238357;
+}
+
+
+/* ============================================================
+   ENGINE INFO
+============================================================ */
+
+.engine-info {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #e8ecf2;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+}
+
+.engine-info div:not(.divider) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.engine-info strong {
+    font-size: 10px;
+    letter-spacing: 0.7px;
+}
+
+.engine-info span {
+    font-size: 10px;
+    color: #7d8796;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background: #dfe4eb;
+}
+
+
+/* ============================================================
+   DISCLAIMER
+============================================================ */
+
+.disclaimer {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    color: #8a93a1;
+}
+
+.disclaimer-icon {
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+
+    .analysis-header {
+        padding: 0 20px;
+    }
+
+    .brand-subtitle {
+        display: none;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .analysis-main {
+        padding: 25px 12px;
+    }
+
+    .analysis-card {
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .analysis-card h1 {
+        font-size: 25px;
+    }
+
+    .engine-info {
+        gap: 12px;
+    }
+
+    .engine-info span {
+        font-size: 9px;
+    }
+
+    .step-status {
+        display: none;
+    }
+}

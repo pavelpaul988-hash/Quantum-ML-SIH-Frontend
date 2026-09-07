@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BreastCancerQML | Results</title>
+
+    <link
+        rel="stylesheet"
+        href="results.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="results-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                Q
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    BreastCancerQML
+                </div>
+
+                <div class="brand-subtitle">
+                    Hybrid Classical & Quantum AI
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="header-badge">
+            ANALYSIS COMPLETE
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="results-main">
+
+        <!-- =================================================
+             PAGE INTRO
+        ================================================== -->
+
+        <section class="page-intro">
+
+            <div>
+
+                <span class="eyebrow">
+                    AI CLASSIFICATION REPORT
+                </span>
+
+                <h1>
+                    Breast Cancer Analysis
+                </h1>
+
+                <p>
+                    Results generated using Classical ML,
+                    Quantum ML and a hybrid prediction pipeline.
+                </p>
+
+            </div>
+
+            <div class="report-badge">
+                BreastCancerQML v1.0
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAIN RESULT
+        ================================================== -->
+
+        <section class="result-hero">
+
+            <div class="result-label">
+                HYBRID CLASSIFICATION
+            </div>
+
+            <div
+                id="hybridPrediction"
+                class="prediction"
+            >
+                --
+            </div>
+
+            <div class="confidence-label">
+                Confidence
+            </div>
+
+            <div
+                id="hybridConfidence"
+                class="confidence"
+            >
+                --%
+            </div>
+
+            <div class="confidence-track">
+
+                <div
+                    id="hybridConfidenceBar"
+                    class="confidence-bar"
+                ></div>
+
+            </div>
+
+            <p id="resultMessage">
+                Loading analysis results...
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             MODEL CARDS
+        ================================================== -->
+
+        <section class="model-grid">
+
+            <!-- CLASSICAL -->
+
+            <article class="model-card">
+
+                <div class="model-top">
+
+                    <div class="model-icon classical">
+                        ML
+                    </div>
+
+                    <span class="model-tag">
+                        CLASSICAL
+                    </span>
+
+                </div>
+
+                <h2>
+                    Classical ML
+                </h2>
+
+                <div
+                    id="classicalPrediction"
+                    class="model-prediction"
+                >
+                    --
+                </div>
+
+                <div class="model-confidence">
+
+                    Confidence:
+                    <strong id="classicalConfidence">
+                        --%
+                    </strong>
+
+                </div>
+
+                <div class="mini-probability">
+
+                    <div class="prob-row">
+
+                        <span>
+                            Benign
+                        </span>
+
+                        <strong id="classicalBenign">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div class="mini-track">
+
+                        <div
+                            id="classicalBenignBar"
+                            class="mini-bar"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="prob-row">
+
+                        <span>
+                            Malignant
+                        </span>
+
+                        <strong id="classicalMalignant">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div class="mini-track">
+
+                        <div
+                            id="classicalMalignantBar"
+                            class="mini-bar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- QUANTUM -->
+
+            <article class="model-card">
+
+                <div class="model-top">
+
+                    <div class="model-icon quantum">
+                        Q
+                    </div>
+
+                    <span class="model-tag">
+                        QUANTUM
+                    </span>
+
+                </div>
+
+                <h2>
+                    Quantum ML
+                </h2>
+
+                <div
+                    id="quantumPrediction"
+                    class="model-prediction"
+                >
+                    --
+                </div>
+
+                <div class="model-confidence">
+
+                    Confidence:
+                    <strong id="quantumConfidence">
+                        --%
+                    </strong>
+
+                </div>
+
+                <div class="mini-probability">
+
+                    <div class="prob-row">
+
+                        <span>
+                            Benign
+                        </span>
+
+                        <strong id="quantumBenign">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div class="mini-track">
+
+                        <div
+                            id="quantumBenignBar"
+                            class="mini-bar"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="prob-row">
+
+                        <span>
+                            Malignant
+                        </span>
+
+                        <strong id="quantumMalignant">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div class="mini-track">
+
+                        <div
+                            id="quantumMalignantBar"
+                            class="mini-bar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- HYBRID -->
+
+            <article class="model-card hybrid-card">
+
+                <div class="model-top">
+
+                    <div class="model-icon hybrid">
+                        H
+                    </div>
+
+                    <span class="model-tag">
+                        HYBRID
+                    </span>
+
+                </div>
+
+                <h2>
+                    Hybrid AI
+                </h2>
+
+                <div
+                    id="hybridCardPrediction"
+                    class="model-prediction"
+                >
+                    --
+                </div>
+
+                <div class="model-confidence">
+
+                    Confidence:
+                    <strong id="hybridCardConfidence">
+                        --%
+                    </strong>
+
+                </div>
+
+                <div class="hybrid-weight">
+
+                    <span>
+                        Classical ML
+                        <strong>70%</strong>
+                    </span>
+
+                    <span>
+                        Quantum ML
+                        <strong>30%</strong>
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             CHART SECTION
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+            <!-- MODEL COMPARISON -->
+
+            <article class="dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            PERFORMANCE
+                        </span>
+
+                        <h2>
+                            Model Confidence
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="modelChart"
+                    class="bar-chart"
+                ></div>
+
+                <div class="chart-legend">
+
+                    <span>
+                        <i></i>
+                        Confidence %
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROBABILITY -->
+
+            <article class="dashboard-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            CLASSIFICATION
+                        </span>
+
+                        <h2>
+                            Hybrid Probability
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="probability-chart">
+
+                    <div class="prob-circle">
+
+                        <div>
+
+                            <strong id="hybridProbability">
+                                --%
+                            </strong>
+
+                            <span>
+                                confidence
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="probability-summary">
+
+                    <div>
+
+                        <span>
+                            Benign
+                        </span>
+
+                        <strong id="hybridBenign">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Malignant
+                        </span>
+
+                        <strong id="hybridMalignant">
+                            --%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURE IMPORTANCE
+        ================================================== -->
+
+        <section class="dashboard-card feature-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-eyebrow">
+                        EXPLAINABLE AI
+                    </span>
+
+                    <h2>
+                        Feature Importance
+                    </h2>
+
+                    <p>
+                        Relative contribution of input features
+                        in the Classical ML model.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                id="featureImportance"
+                class="feature-list"
+            >
+
+                <div class="loading">
+                    Loading feature importance...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INPUT FEATURES
+        ================================================== -->
+
+        <section class="dashboard-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="card-eyebrow">
+                        INPUT DATA
+                    </span>
+
+                    <h2>
+                        Sample Features
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div
+                id="featureValues"
+                class="input-grid"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DISCLAIMER
+        ================================================== -->
+
+        <section class="final-disclaimer">
+
+            <div class="disclaimer-icon">
+                !
+            </div>
+
+            <div>
+
+                <strong>
+                    Research & Educational Prototype
+                </strong>
+
+                <p>
+                    This system demonstrates machine learning
+                    and quantum machine learning concepts using
+                    a public breast cancer dataset. Results are
+                    not medical diagnoses and should not be used
+                    for clinical decisions.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIONS
+        ================================================== -->
+
+        <div class="actions">
+
+            <button
+                class="secondary-button"
+                onclick="window.location.href='assessment.html'"
+            >
+                ← New Analysis
+            </button>
+
+            <button
+                class="primary-button"
+                onclick="window.print()"
+            >
+                Print Report
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="results.js"></script>
+
+</body>
+
+</html>

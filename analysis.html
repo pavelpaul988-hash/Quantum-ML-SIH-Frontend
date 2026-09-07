@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BreastCancerQML | AI Analysis</title>
+
+    <link
+        rel="stylesheet"
+        href="analysis.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="analysis-header">
+
+        <div class="brand">
+            <div class="brand-icon">Q</div>
+
+            <div>
+                <div class="brand-name">
+                    BreastCancerQML
+                </div>
+
+                <div class="brand-subtitle">
+                    Hybrid AI Research Platform
+                </div>
+            </div>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            AI ENGINE ACTIVE
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="analysis-main">
+
+        <section class="analysis-card">
+
+            <div class="ai-orb">
+                <div class="orb-core">Q</div>
+            </div>
+
+            <h1>
+                Analyzing Your Sample
+            </h1>
+
+            <p class="description">
+                Our hybrid Classical ML and Quantum ML pipeline
+                is processing the breast cancer features.
+            </p>
+
+
+            <!-- =================================================
+                 PROGRESS
+            ================================================== -->
+
+            <div class="progress-section">
+
+                <div class="progress-info">
+
+                    <span>
+                        Analysis Progress
+                    </span>
+
+                    <span id="progressPercent">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ANALYSIS STEPS
+            ================================================== -->
+
+            <div class="steps">
+
+                <div
+                    class="step active"
+                    id="step1"
+                >
+
+                    <div class="step-icon">
+                        <span>1</span>
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Preparing Breast Cancer Features
+                        </h3>
+
+                        <p>
+                            Validating the 10 input measurements
+                        </p>
+
+                    </div>
+
+                    <div class="step-status">
+                        Processing
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step2"
+                >
+
+                    <div class="step-icon">
+                        <span>2</span>
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Feature Processing
+                        </h3>
+
+                        <p>
+                            Scaling and preparing model inputs
+                        </p>
+
+                    </div>
+
+                    <div class="step-status">
+                        Waiting
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step3"
+                >
+
+                    <div class="step-icon">
+                        <span>3</span>
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Running Classical ML
+                        </h3>
+
+                        <p>
+                            Random Forest classification
+                        </p>
+
+                    </div>
+
+                    <div class="step-status">
+                        Waiting
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step4"
+                >
+
+                    <div class="step-icon">
+                        <span>4</span>
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Running Quantum ML
+                        </h3>
+
+                        <p>
+                            Quantum-enhanced classification layer
+                        </p>
+
+                    </div>
+
+                    <div class="step-status">
+                        Waiting
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="step"
+                    id="step5"
+                >
+
+                    <div class="step-icon">
+                        <span>5</span>
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Generating Hybrid Result
+                        </h3>
+
+                        <p>
+                            Combining model predictions
+                        </p>
+
+                    </div>
+
+                    <div class="step-status">
+                        Waiting
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ENGINE INFO
+            ================================================== -->
+
+            <div class="engine-info">
+
+                <div>
+                    <strong>
+                        CLASSICAL
+                    </strong>
+
+                    <span>
+                        Random Forest
+                    </span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div>
+                    <strong>
+                        QUANTUM
+                    </strong>
+
+                    <span>
+                        QML Engine
+                    </span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div>
+                    <strong>
+                        HYBRID
+                    </strong>
+
+                    <span>
+                        70% + 30%
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DISCLAIMER
+            ================================================== -->
+
+            <div class="disclaimer">
+
+                <span class="disclaimer-icon">
+                    
+                </span>
+
+                <span>
+                    This system is a research and educational
+                    prototype and is not a medical diagnosis.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="analysis.js"></script>
+
+</body>
+</html>

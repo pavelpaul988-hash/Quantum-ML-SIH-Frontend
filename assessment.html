@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BreastCancerQML | AI Assessment</title>
+
+    <meta name="description"
+          content="Breast Cancer Classification using Classical and Quantum Machine Learning">
+
+    <link rel="stylesheet" href="assessment.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="assessment-header">
+
+        <a href="dashboard.html" class="logo">
+
+            <div class="logo-icon">
+                ⚛
+            </div>
+
+            <div>
+                <div class="logo-text">
+                    BreastCancer<span>QML</span>
+                </div>
+
+                <div class="logo-subtitle">
+                    Hybrid AI Research Platform
+                </div>
+            </div>
+
+        </a>
+
+        <a href="dashboard.html" class="back-button">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="assessment-main">
+
+        <div class="assessment-container">
+
+
+            <!-- =================================
+                 PAGE INTRO
+            ================================== -->
+
+            <section class="page-intro">
+
+                <div class="small-label">
+                    HYBRID AI • BREAST CANCER CLASSIFICATION
+                </div>
+
+                <h1>
+                    AI-Powered Cancer Classification
+                </h1>
+
+                <p>
+                    Enter the extracted breast-cell measurement features
+                    to evaluate the sample using Classical Machine Learning,
+                    Quantum Machine Learning, and a Hybrid prediction model.
+                </p>
+
+            </section>
+
+
+            <!-- =================================
+                 RESEARCH NOTICE
+            ================================== -->
+
+            <div class="notice-box">
+
+                <div class="notice-icon">
+                    🧬
+                </div>
+
+                <div>
+
+                    <strong>
+                        Research & Educational Prototype
+                    </strong>
+
+                    <p>
+                        This system is designed for research and demonstration
+                        purposes. The prediction is a machine-learning
+                        classification result and must not be considered
+                        a medical diagnosis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 FORM
+            ================================== -->
+
+            <form id="assessmentForm">
+
+
+                <!-- =================================
+                     SECTION 01
+                ================================== -->
+
+                <section class="form-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Cell Nucleus Features
+                            </h2>
+
+                            <p>
+                                Enter the extracted measurements from the
+                                breast-cell sample.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Mean Radius -->
+
+                        <div class="form-group">
+
+                            <label for="meanRadius">
+                                Mean Radius <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanRadius"
+                                    name="meanRadius"
+                                    step="0.0001"
+                                    min="0"
+                                    placeholder="Example: 14.32"
+                                    required
+                                >
+
+                                <span class="unit">
+                                    μm
+                                </span>
+
+                            </div>
+
+                            <small>
+                                Average distance from the center to the perimeter.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Texture -->
+
+                        <div class="form-group">
+
+                            <label for="meanTexture">
+                                Mean Texture <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanTexture"
+                                    name="meanTexture"
+                                    step="0.0001"
+                                    min="0"
+                                    placeholder="Example: 18.71"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Average variation in pixel intensity.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Perimeter -->
+
+                        <div class="form-group">
+
+                            <label for="meanPerimeter">
+                                Mean Perimeter <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanPerimeter"
+                                    name="meanPerimeter"
+                                    step="0.0001"
+                                    min="0"
+                                    placeholder="Example: 92.41"
+                                    required
+                                >
+
+                                <span class="unit">
+                                    μm
+                                </span>
+
+                            </div>
+
+                            <small>
+                                Average perimeter of the cell nucleus.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Area -->
+
+                        <div class="form-group">
+
+                            <label for="meanArea">
+                                Mean Area <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanArea"
+                                    name="meanArea"
+                                    step="0.0001"
+                                    min="0"
+                                    placeholder="Example: 654.2"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Average area of the cell nucleus.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Smoothness -->
+
+                        <div class="form-group">
+
+                            <label for="meanSmoothness">
+                                Mean Smoothness <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanSmoothness"
+                                    name="meanSmoothness"
+                                    step="0.000001"
+                                    min="0"
+                                    placeholder="Example: 0.096"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Local variation in radius lengths.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Compactness -->
+
+                        <div class="form-group">
+
+                            <label for="meanCompactness">
+                                Mean Compactness <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanCompactness"
+                                    name="meanCompactness"
+                                    step="0.000001"
+                                    min="0"
+                                    placeholder="Example: 0.104"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Shape compactness of the nucleus.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Concavity -->
+
+                        <div class="form-group">
+
+                            <label for="meanConcavity">
+                                Mean Concavity <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanConcavity"
+                                    name="meanConcavity"
+                                    step="0.000001"
+                                    min="0"
+                                    placeholder="Example: 0.089"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Severity of concave portions of the contour.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Concave Points -->
+
+                        <div class="form-group">
+
+                            <label for="meanConcavePoints">
+                                Mean Concave Points <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanConcavePoints"
+                                    name="meanConcavePoints"
+                                    step="0.000001"
+                                    min="0"
+                                    placeholder="Example: 0.048"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Average number of concave portions.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Symmetry -->
+
+                        <div class="form-group">
+
+                            <label for="meanSymmetry">
+                                Mean Symmetry <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanSymmetry"
+                                    name="meanSymmetry"
+                                    step="0.000001"
+                                    min="0"
+                                    placeholder="Example: 0.181"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Symmetry of the cell nucleus.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mean Fractal Dimension -->
+
+                        <div class="form-group">
+
+                            <label for="meanFractalDimension">
+                                Mean Fractal Dimension <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="meanFractalDimension"
+                                    name="meanFractalDimension"
+                                    step="0.000001"
+                                    min="0"
+                                    placeholder="Example: 0.063"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Complexity of the nucleus boundary.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     MODEL INFORMATION
+                ================================== -->
+
+                <section class="model-card">
+
+                    <div class="model-icon">
+                        ⚛
+                    </div>
+
+                    <div class="model-content">
+
+                        <div class="model-title">
+                            Hybrid Intelligence Pipeline
+                        </div>
+
+                        <div class="model-flow">
+
+                            <span>
+                                Input Features
+                            </span>
+
+                            <b>→</b>
+
+                            <span>
+                                Classical ML
+                            </span>
+
+                            <b>→</b>
+
+                            <span>
+                                Quantum ML
+                            </span>
+
+                            <b>→</b>
+
+                            <span class="hybrid">
+                                Hybrid Result
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     SUBMIT
+                ================================== -->
+
+                <section class="submit-section">
+
+                    <div class="submit-content">
+
+                        <div class="submit-status">
+
+                            <span class="status-dot"></span>
+
+                            Analysis Engine Ready
+
+                        </div>
+
+                        <strong>
+                            Run Hybrid AI Analysis
+                        </strong>
+
+                        <p>
+                            Your input will be processed by the
+                            Classical ML and Quantum ML pipeline.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                        id="submitButton"
+                    >
+
+                        <span>
+                            Analyze Sample
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </section>
+
+
+                <!-- =================================
+                     MESSAGE
+                ================================== -->
+
+                <div
+                    id="formMessage"
+                    class="form-message">
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="assessment.js"></script>
+
+</body>
+
+</html>
+
