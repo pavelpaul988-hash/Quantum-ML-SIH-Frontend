@@ -134,7 +134,7 @@ async function testBackend() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/health"
+            "https://quantum-ml-backend-sih.onrender.com/api/health"
         );
 
         if (!response.ok) {
