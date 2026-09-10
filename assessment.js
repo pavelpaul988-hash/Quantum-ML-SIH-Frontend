@@ -1,4 +1,3 @@
-
 // BreastCancerQML - Assessment JavaScript
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,17 +18,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Read the 10 breast cancer features
         const features = {
-            meanRadius: Number(document.getElementById("meanRadius").value),
-            meanTexture: Number(document.getElementById("meanTexture").value),
-            meanPerimeter: Number(document.getElementById("meanPerimeter").value),
-            meanArea: Number(document.getElementById("meanArea").value),
-            meanSmoothness: Number(document.getElementById("meanSmoothness").value),
-            meanCompactness: Number(document.getElementById("meanCompactness").value),
-            meanConcavity: Number(document.getElementById("meanConcavity").value),
+            meanRadius: Number(
+                document.getElementById("meanRadius").value
+            ),
+
+            meanTexture: Number(
+                document.getElementById("meanTexture").value
+            ),
+
+            meanPerimeter: Number(
+                document.getElementById("meanPerimeter").value
+            ),
+
+            meanArea: Number(
+                document.getElementById("meanArea").value
+            ),
+
+            meanSmoothness: Number(
+                document.getElementById("meanSmoothness").value
+            ),
+
+            meanCompactness: Number(
+                document.getElementById("meanCompactness").value
+            ),
+
+            meanConcavity: Number(
+                document.getElementById("meanConcavity").value
+            ),
+
             meanConcavePoints: Number(
                 document.getElementById("meanConcavePoints").value
             ),
-            meanSymmetry: Number(document.getElementById("meanSymmetry").value),
+
+            meanSymmetry: Number(
+                document.getElementById("meanSymmetry").value
+            ),
+
             meanFractalDimension: Number(
                 document.getElementById("meanFractalDimension").value
             )
@@ -47,51 +71,62 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            // Send features to Flask backend
+            // Send features to LIVE Render backend
             const response = await fetch(
-                "http://127.0.0.1:5000/api/predict",
+                "https://quantum-ml-backend-sih.onrender.com/api/predict",
                 {
                     method: "POST",
+
                     headers: {
                         "Content-Type": "application/json"
                     },
+
                     body: JSON.stringify({
                         features: features
                     })
                 }
             );
 
+            // Check HTTP response
             if (!response.ok) {
                 throw new Error(
                     `Backend returned status ${response.status}`
                 );
             }
 
+            // Read backend response
             const result = await response.json();
 
             console.log("Backend prediction:", result);
 
+            // Check API response
             if (result.status !== "success") {
                 throw new Error(
                     result.message || "Prediction failed."
                 );
             }
 
-            // Create the complete assessment object
+            // Create complete assessment object
             const assessment = {
                 id: Date.now(),
+
                 date: new Date().toLocaleString(),
 
                 model: "BreastCancerQML",
+
                 version: "1.0",
 
                 features: features,
 
                 prediction: {
                     classical_ml: result.classical_ml,
+
                     quantum_ml: result.quantum_ml,
+
                     hybrid: result.hybrid,
-                    feature_importance: result.feature_importance
+
+                    feature_importance:
+                        result.feature_importance
                 }
             };
 
@@ -106,7 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 const savedHistory =
-                    localStorage.getItem("healthqmlAssessments");
+                    localStorage.getItem(
+                        "healthqmlAssessments"
+                    );
 
                 if (savedHistory) {
                     assessments = JSON.parse(savedHistory);
@@ -116,7 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             } catch (error) {
-                console.warn("Could not read assessment history.");
+                console.warn(
+                    "Could not read assessment history."
+                );
+
                 assessments = [];
             }
 
@@ -137,22 +177,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Analysis complete. Opening results...";
             }
 
-            // Go to analysis page
+            // Open analysis page
             window.location.href = "analysis.html";
 
         } catch (error) {
-            console.error("Prediction error:", error);
+            console.error(
+                "Prediction error:",
+                error
+            );
 
             if (formMessage) {
                 formMessage.textContent =
-                    "Unable to connect to the AI backend. Make sure Flask is running on port 5000.";
+                    "Unable to connect to the AI backend. Please try again.";
             }
 
             alert(
                 "Backend connection failed.\n\n" +
-                "Please make sure your Flask backend is running."
+                "Please try again in a moment."
             );
         }
     });
 });
-
